@@ -1,4 +1,13 @@
-### About HTTPS  
+---
+layout: post
+title: "About HTTPS"
+date: "2016-11-16" 
+categories:
+description: 
+image: 
+image-sm:
+---
+
 #### 关于证书  
 按认证级别划分：  
 * 域名认证：最低级别认证，浏览器地址栏会显示一把锁  
