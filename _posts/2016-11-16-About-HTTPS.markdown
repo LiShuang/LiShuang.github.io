@@ -9,7 +9,7 @@ image: https://unsplash.it/2000/1200?image=1003
 image-sm: https://unsplash.it/500/300?image=1003
 ---
 
-#### 关于证书  
+### 关于证书  
 按认证级别划分：  
 * 域名认证：最低级别认证，浏览器地址栏会显示一把锁  
 * 公司认证  
@@ -20,7 +20,7 @@ image-sm: https://unsplash.it/500/300?image=1003
 * 通配符证书：可以用于某个域名及其一级子域名  
 * 多域名证书：用于多个域名  
 
-#### 修改资源链接  
+### 修改资源链接  
 网页加载的 http 资源，要全部改成 https 的链接。例如：  
 
     <script src="http://test.youdao.com/jquery.js"></script>  
@@ -37,7 +37,7 @@ image-sm: https://unsplash.it/500/300?image=1003
 
     <link rel="canonical" src="https://test.youdao.com/test.html">  
 
-#### 301重定向   
+### 301重定向   
 修改服务器的配置文件，使用 301 重定向。  
 
 Nginx 的写法：  
@@ -54,8 +54,8 @@ Apache 的写法（.htacess文件）：
     RewriteCond %{HTTPS} off
     RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-#### 安全措施  
-##### HSTS  
+### 安全措施  
+#### HSTS  
 HTTP 严格传输协议(HTTP Strict Transport Security)，即强制浏览器只能发出 HTTPS 请求，并阻止用户接受不安全的证书。  
 
 在网页的响应头里加入一个强制性声明：  
@@ -64,7 +64,7 @@ HTTP 严格传输协议(HTTP Strict Transport Security)，即强制浏览器只�
 
 缺点是：用户首次访问网站发出 HTTP 请求时，是不受 HSTS 保护的。  
 
-#### Cookie  
+### Cookie  
 确保浏览只有在使用 HTTPS 时，才发送 Cookie。可在网页响应头的 Set-Cookie 字段加上 Secure 标志。  
 
     Set-Cookie: LSID=DQAAAK...Eaem_vYg; Secure  
