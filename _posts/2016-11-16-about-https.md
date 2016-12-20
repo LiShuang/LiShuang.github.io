@@ -23,10 +23,7 @@ tags:
 ### 修改资源链接  
 网页加载的 http 资源，要全部改成 https 的链接。例如：  
 
-<div class="highlighter-header">Javascript</div>
-{% highlight html linenos %}
     <script src="http://test.youdao.com/jquery.js"></script>  
-{% endhighlight %}
     
 可修改为：  
 
@@ -41,6 +38,7 @@ tags:
     <link rel="canonical" src="https://test.youdao.com/test.html">  
 
 ### 301重定向   
+
 修改服务器的配置文件，使用 301 重定向。  
 
 Nginx 的写法：  
@@ -59,6 +57,7 @@ Apache 的写法（.htacess文件）：
 
 ### 安全措施  
 #### HSTS  
+
 HTTP 严格传输协议(HTTP Strict Transport Security)，即强制浏览器只能发出 HTTPS 请求，并阻止用户接受不安全的证书。  
 
 在网页的响应头里加入一个强制性声明：  
