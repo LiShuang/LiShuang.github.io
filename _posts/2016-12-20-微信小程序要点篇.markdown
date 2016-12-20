@@ -5,7 +5,7 @@ date: "2016-12-20"
 categories:
     - Other
 description: 
-image: https://s27.postimg.org/97acz90fn/image.jpg
+image: https://s27.postimg.org/y5y55qqw3/tudou1.jpg
 image-sm: https://s27.postimg.org/97acz90fn/image.jpg
 ---
 
