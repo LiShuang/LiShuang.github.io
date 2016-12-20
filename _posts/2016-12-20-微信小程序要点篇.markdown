@@ -52,13 +52,13 @@ image-sm: https://s27.postimg.org/97acz90fn/image.jpg
 * pages（必填）  
         数组，每一项代码对应页面的【路径+文件名】，数组第一项代表项目的初始页面。当新增或减少页面时，都需要对 pages 作对应的修改。  
         例：  
-            // 文件名不需要带后缀，框架会自动对.js .wxml .wxss .json 进行整合
-            {
-                pages: [
-                    "pages/index/index",
-                    "pages/logs/logs"
-                ]
-            }
+            // 文件名不需要带后缀，框架会自动对.js .wxml .wxss .json 进行整合   
+            {  
+                pages: [  
+                    "pages/index/index",  
+                    "pages/logs/logs"  
+                ]  
+            }  
         
 * window  
         设置小程序的状态栏、导航条、标题、窗口背景色。  
@@ -214,112 +214,3 @@ image-sm: https://s27.postimg.org/97acz90fn/image.jpg
             })
             
 * [API](https://mp.weixin.qq.com/debug/wxadoc/dev/api/?t=20161122) 
-
-#### 视图层  
-* WXML    
-1.数据绑定   
-    Mustache 语法 {{}}，应用场景:  
-    
-        //内容
-        <view>{{ content }}</view>
-
-        //属性  
-        <view id="item-{{ index }}">Item</view>
-        <view wx-if="{{ condition }}"></view>
-        
-        //关键字  
-        <checkbox checked="{{ false }}"></checkbox>
-        
-        //运算 
-        <view hidden="{{ flag ? true : false }}">Hidden</view>
-        <view>{{ a }} + {{ b }}</view>
-        <view>{{ "hello" + name }}</view>
-        
-        //对象
-        //合成对象是 { a: 1, b: 3, c: 4}
-        <template is="objectCombine" data="{{ ...obj1, ...obj2 }}"></template>
-        
-        Page({
-            data: {
-                obj1: {
-                    a: 1,
-                    b: 2
-                },
-                obj2: {
-                    b: 3,
-                    c: 4
-                }
-            }
-        })  
-2.条件渲染   
-    
-        //wx:if  
-        <view wx:if="{{ condition }}"></view>
-        
-        //wx:elif 或 wx:else
-        <view wx:elif="{{ condition }}"></view>
-        <view wx:else="{{ condition }}"></view>
-        
-        //block wx:if
-        //block 并不是一个组件，仅仅作为一个包装元素，不在页面中做任何渲染，只接受控制属性
-        <block wx:if="{{ condition }}">
-            <view></view>
-            <view></view>
-        </block>
-    
-    wx:if 和 hidden 类似于 Vue 的 v-if 和 v-show。
-        
-3.列表渲染  
-
-        //wx:for 可嵌套
-        //默认当前项的下标变量名为 index，当前项的变量名为 item
-        <view wx:for="{{ array }}">
-            {{ index }}.{{ item }}
-        </view>
-        
-        //使用 wx:for-index 可以自定义下标变量名，wx:for-item 可以自定义当前项的变量名
-        <view wx:for={{ array }} wx:for-index="idx" wx:for-item="itemData">
-        </view>
-        
-        //block wx:for
-        <block wx:for="{{ array }}">
-            <view>{{ index }}</view>
-            <view>{{ item }}></view>
-        </block>
-        
-        //wx:key
-4.模板   
-模板有自己的作用域，只能使用 data 传入的数据
-    
-        //定义模板
-        <template name="tmplName">
-            <view>This is a template.</view>
-        </template>
-        
-        //使用模板
-        <template is="tmplName" data="{{ templateData }}" />
-        
-5.事件  
-
-        <view bindtap="eventName">Click</view>
-6.引用
-两种引用方式 import 和 include。  
-import:
-        
-        <import src="模板的路径" />
-        <template is="模板名称" data="{{ 数据 }}" />
-        
-include: 引入未包含在 template 中的内容。
-
-        <include src="index.wxml" />
-
-* WXSS  
-1.  尺寸单位  
-    - rpx 可根据屏幕宽度进行自适应  
-    750rpx = 375px = 750物理像素
-    - rem 规定屏幕宽度为 20rem；1rem = (750/20)rpx  
-    
-2.  样式导入  
-使用 @import 导入外部样式
-
-* [组件](https://mp.weixin.qq.com/debug/wxadoc/dev/component/?t=20161122)
