@@ -216,7 +216,7 @@ image-sm: https://s27.postimg.org/97acz90fn/image.jpg
 * [API](https://mp.weixin.qq.com/debug/wxadoc/dev/api/?t=20161122) 
 
 #### 视图层  
-* WXML  
+* WXML    
 1.数据绑定   
     Mustache 语法 {{}}，应用场景:  
     
@@ -250,7 +250,7 @@ image-sm: https://s27.postimg.org/97acz90fn/image.jpg
                     c: 4
                 }
             }
-        })
+        })  
 2.条件渲染   
     
         //wx:if  
