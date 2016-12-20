@@ -8,8 +8,6 @@ tags:
     - https
 ---
 
-## HTTPS   
-
 ### 关于证书  
 按认证级别划分：  
 * 域名认证：最低级别认证，浏览器地址栏会显示一把锁  
@@ -58,6 +56,7 @@ Apache 的写法（.htacess文件）：
 
 ### 安全措施  
 #### HSTS
+#### This is h4 header
 
 HTTP 严格传输协议(HTTP Strict Transport Security)，即强制浏览器只能发出 HTTPS 请求，并阻止用户接受不安全的证书。  
 
